@@ -836,16 +836,18 @@ pub unsafe extern "C" fn alvr_render_stream_opengl(
             renderer.render(
                 hardware_buffer,
                 [
-                    StreamViewParams {
-                        swapchain_index: left_params.swapchain_index,
-                        reprojection_rotation: from_capi_quat(left_params.reprojection_rotation),
-                        fov: from_capi_fov(left_params.fov),
-                    },
-                    StreamViewParams {
-                        swapchain_index: right_params.swapchain_index,
-                        reprojection_rotation: from_capi_quat(right_params.reprojection_rotation),
-                        fov: from_capi_fov(right_params.fov),
-                    },
+                    left_params.swapchain_index,
+                    right_params.swapchain_index,
+                    // StreamViewParams {
+                    //     swapchain_index: left_params.swapchain_index,
+                    //     reprojection_rotation: from_capi_quat(left_params.reprojection_rotation),
+                    //     fov: from_capi_fov(left_params.fov),
+                    // },
+                    // StreamViewParams {
+                    //     swapchain_index: right_params.swapchain_index,
+                    //     reprojection_rotation: from_capi_quat(right_params.reprojection_rotation),
+                    //     fov: from_capi_fov(right_params.fov),
+                    // },
                 ],
             );
         }

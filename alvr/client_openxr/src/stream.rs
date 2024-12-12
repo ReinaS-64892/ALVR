@@ -366,16 +366,18 @@ impl StreamContext {
             self.renderer.render(
                 buffer_ptr,
                 [
-                    StreamViewParams {
-                        swapchain_index: left_swapchain_idx,
-                        reprojection_rotation: Quat::IDENTITY,
-                        fov: view_params[0].fov,
-                    },
-                    StreamViewParams {
-                        swapchain_index: right_swapchain_idx,
-                        reprojection_rotation: Quat::IDENTITY,
-                        fov: view_params[1].fov,
-                    },
+                    left_swapchain_idx,
+                    right_swapchain_idx,
+                    // StreamViewParams {
+                    //     swapchain_index: left_swapchain_idx,
+                    //     reprojection_rotation: Quat::IDENTITY,
+                    //     fov: view_params[0].fov,
+                    // },
+                    // StreamViewParams {
+                    //     swapchain_index: right_swapchain_idx,
+                    //     reprojection_rotation: Quat::IDENTITY,
+                    //     fov: view_params[1].fov,
+                    // },
                 ],
             )
         };
